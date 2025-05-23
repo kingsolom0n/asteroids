@@ -15,6 +15,11 @@ def main():
 
     running = True
     while running:
+        ## Create window and let user close window
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return
+        
         screen.fill("black")
         pygame.display.flip()
 
