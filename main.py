@@ -4,6 +4,7 @@
 import pygame
 from constants import *
 from player import *
+from asteroid import *
 
 def main():
     pygame.init()
@@ -11,7 +12,10 @@ def main():
     # Use pygame groups to organize things
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
+    asteroids = pygame.sprite.Group()
+
     Player.containers = (updatable, drawable)
+    Asteroid.containers = (asteroids, updatable, drawable)
 
     game_clock = pygame.time.Clock()
     dt = 0
