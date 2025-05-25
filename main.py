@@ -8,6 +8,11 @@ from player import *
 def main():
     pygame.init()
 
+    # Use pygame groups to organize things
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+    Player.containers = (updatable, drawable)
+
     game_clock = pygame.time.Clock()
     dt = 0
 
@@ -26,10 +31,11 @@ def main():
                 return
         
         screen.fill("black")
-        ## ---> Call player sprite here
 
-        player_one.update(dt)
-        player_one.draw(screen)
+        updatable.update(dt)
+        
+        for object in drawable:
+            object.draw(screen)
         pygame.display.flip()
 
         ## Adjust framerate

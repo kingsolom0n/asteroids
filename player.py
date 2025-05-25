@@ -23,6 +23,7 @@ class Player(CircleShape):
     def rotate(self, dt):
         self.rotation += (PLAYER_TURN_SPEED * dt)
     
+    # Take in inputs and move player
     def update(self, dt):
         keys = pygame.key.get_pressed()
 
