@@ -3,6 +3,7 @@
 # throughout this file
 import pygame
 from constants import *
+from player import *
 
 def main():
     pygame.init()
@@ -11,6 +12,7 @@ def main():
     dt = 0
 
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    player_one = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     print("Starting Asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
@@ -24,6 +26,8 @@ def main():
                 return
         
         screen.fill("black")
+        ## ---> Call player sprite here
+        player_one.draw(screen)
         pygame.display.flip()
 
         ## Adjust framerate
