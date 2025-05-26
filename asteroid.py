@@ -21,7 +21,7 @@ class Asteroid(CircleShape):
         
         angle = random.uniform(20, 50)
         small_one = pygame.math.Vector2.rotate(self.velocity, angle)
-        small_two = pygame.math.Vector2.rotate(self.velocity, angle)
+        small_two = pygame.math.Vector2.rotate(self.velocity, -angle)
 
         new_radius = self.radius - ASTEROID_MIN_RADIUS
         asteroid_one = Asteroid(self.position.x, self.position.y, new_radius)
